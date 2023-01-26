@@ -1,0 +1,13 @@
+.home-header{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0087c6;
+    box-shadow: 4px 4px 14px -2px rgba(0,0,0,0.75);
+}
+
+.home-main-title{
+    text-align: center;
+    color : #FFECCC;
+}
