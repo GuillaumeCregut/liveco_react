@@ -1,0 +1,36 @@
+.activity-column {
+    width: 20vw;
+    border :#0087C6 solid 1px;
+    /* height: 480px; */
+    box-shadow: 4px 4px 14px -2px rgba(0,0,0,0.75);
+}
+
+.activity-img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.activity-column h3{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.activity-column p{
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+@media  screen and (max-width:768px) {
+    .activity-column {
+        /* Pour éviter le problème de largeur, il faut réduire à 70% */
+        width: 70vh;
+        height: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+    }
+}

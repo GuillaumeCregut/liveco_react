@@ -1,0 +1,17 @@
+.home-section-title{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.activity-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media  screen and (max-width:768px) {
+    .activity-container{
+        flex-direction: column;
+    }
+}
