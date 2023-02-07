@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Resto.css';
 
-const Resto = ({ resto }) => {
+const Resto = ({ resto, setGlobalPrice, globalPrice }) => {
   console.log(resto);
   const [quantity, setQuantity] = useState(0);
   const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    setGlobalPrice(globalPrice + quantity * resto.price);
+  }, [quantity]);
+
   let totalPrice = parseInt(quantity) * parseInt(resto.price);
   console.log(typeof setQuantity);
   return (
