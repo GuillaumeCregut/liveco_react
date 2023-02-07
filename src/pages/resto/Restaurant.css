@@ -1,0 +1,16 @@
+.resto-section-title {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.container-food {
+  display: flex;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .container-food {
+    flex-direction: column;
+  }
+}
