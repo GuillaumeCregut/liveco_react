@@ -4,11 +4,11 @@ import Loading from '../../components/loading/Loading';
 import Resto from '../../components/resto/Resto';
 import './Restaurant.css';
 
-const Restaurant = ({ globalPrice, setGlobalPrice }) => {
+const Restaurant = () => {
   const [restaurant, setRestaurant] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // const [globalPrice, setGlobalPrice] = useState(0);
+ 
 
   useEffect(() => {
     const url = 'http://localhost:8000/api/resto';
@@ -33,9 +33,7 @@ const Restaurant = ({ globalPrice, setGlobalPrice }) => {
         {restaurant.map((item, i) => (
           <Resto
             key={i}
-            resto={item}
-            globalPrice={globalPrice}
-            setGlobalPrice={setGlobalPrice}
+            resto={item}     
           />
         ))}
       </div>

@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Resto.css';
 
-const Resto = ({ resto, setGlobalPrice, globalPrice }) => {
+const Resto = ({ resto }) => {
   console.log(resto);
   const [quantity, setQuantity] = useState(0);
   const [like, setLike] = useState(false);
 
   useEffect(() => {
-    setGlobalPrice(globalPrice + quantity * resto.price);
   }, [quantity]);
 
   let totalPrice = parseInt(quantity) * parseInt(resto.price);
   console.log(typeof setQuantity);
   return (
     <article className='restaurant'>
+      {/* lien : /resto/1 Je veux passer le like et la quantité*/} 
+      <Link to={`/resto/${resto.id}`} state={{ like:like,quantity:quantity}}> 
       <img src={resto.picture} alt={resto.name} className='img-food' />
+      </Link>
       <h3 className='title-restaurant'>{resto.name}</h3>
       <p>Prix : {resto.price} euros</p>
       <label htmlFor='qtty'>
