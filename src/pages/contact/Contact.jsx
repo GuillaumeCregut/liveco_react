@@ -1,7 +1,18 @@
+import { useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useUser } from '../../contexts/UserContext';
 
 const Contact = () => {
   const userConnected = true;
+  const nameRef = useRef();
+  const firstnameRef = useRef();
+  const { setUser } = useUser(); //Récupère depuis le context l'assesseur
+
+  const handleClick = () => {
+    const name = nameRef.current.value; //const name=document.getElementByID('name').value
+    const firstname = firstnameRef.current.value;
+    setUser({ firstname, name });
+  };
   return (
     <div style={{ border: '1px solid black', padding: '10px' }}>
       Contact
@@ -25,6 +36,11 @@ const Contact = () => {
           <p>Veuillez vous connecter</p>
         )}
       </div>
+      <label htmlFor='name'> Nom : </label>
+      <input type='text' id='name' ref={nameRef} />
+      <label htmlFor='firstname'> Prénom : </label>
+      <input type='text' id='firstname' ref={firstnameRef} />
+      <button onClick={handleClick}>Valider</button>
     </div>
   );
 };
